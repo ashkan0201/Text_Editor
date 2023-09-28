@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Editor (window)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data">
+        <div class="shadow-lg p-3 mb-5 bg-body rounded">
+            <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                <a class="navbar-brand">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/013/743/158/small/apple-pixel-art-png.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                    <b>Text Editor (windows)</b>
+                </a>
+                </div>
+            </nav>
+            <h1></h1>
+            <div class="hstack gap-4">
+                <div class="p-2"><b>> {{ path }}</b></div>
+                <div class="p-2 ms-auto">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="@python">Add Python3</button>
+                    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Add Python3</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <form method="POST">
+                                <div class="mb-3">
+                                  <label for="recipient-name" class="col-form-label">File Name: (Automatic formatting)</label>
+                                  <input type="text" class="form-control" id="recipient-name" name="python_name" required>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                  <input type="submit" class="btn btn-primary" value="Create">
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-2">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-bs-whatever="@txt">Add Txt</button>
+                    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Add Txt</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <form method="POST">
+                                <div class="mb-3">
+                                  <label for="recipient-name" class="col-form-label">File Name: (Automatic formatting)</label>
+                                  <input type="text" class="form-control" id="recipient-name" name="txt_name" required>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                  <input type="submit" class="btn btn-primary" value="Create">
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-2">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3" data-bs-whatever="@folder">Add Folder</button>
+                    <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Add Folder</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <form method="POST">
+                                <div class="mb-3">
+                                  <label for="recipient-name" class="col-form-label">Folder Name:</label>
+                                  <input type="text" class="form-control" id="recipient-name" name="folder_name" required>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                  <input type="submit" class="btn btn-primary" value="Create">
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>    
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Folder or File</th>
+                    <th scope="col">Format</th>
+                    <th scope="col">Size</th>
+                    <th scope="col">Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% if status %}
+                    <tr>
+                        <td>
+                            <a class="icon-link icon-link-hover" style="--bs-link-hover-color-rgb: 105, 105, 105;" href="{{ url_for('index', back=back) }}">
+                                <img src="https://cdn-icons-png.flaticon.com/512/62/62319.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                                <b> .. </b>
+                                <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+                            </a>
+                        </td>
+                        <td><b></b></td>
+                        <td><b></b></td>
+                        <td><b></b></td>
+                    </tr>
+                {% endif %}
+                {% for name, date in directories %}
+                <tr>
+                    <td>
+                        <a class="icon-link icon-link-hover" style="--bs-link-hover-color-rgb: 105, 105, 105;" href="{{ url_for('index', path=name) }}">
+                          <img src="https://cdn-icons-png.flaticon.com/512/62/62319.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                          {{ name }}
+                          <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+                        </a>
+                    </td>
+                    <td> Dir </td>
+                    <td> - </td>
+                    <td>{{ date }}</td>
+                </tr>
+                {% endfor %}
+                {% for name, format, size, date in files %}
+                    {% if format == "Python" %}
+                      <td>
+                        <a class="icon-link icon-link-hover" style="--bs-link-hover-color-rgb: 105, 105, 105;" href="{{ url_for('editor', py_name=name) }}">
+                          <img src="https://cdn.icon-icons.com/icons2/887/PNG/512/Python_icon-icons.com_68975.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                          {{ name }}
+                          <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+                        </a>
+                      </td>
+                      <td>{{ format }}</td>
+                      <td>{{ size }}</td>
+                      <td>{{ date }}</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                      <td>
+                        <a class="icon-link icon-link-hover" style="--bs-link-hover-color-rgb: 105, 105, 105;" href="{{ url_for('editor', txt_name=name) }}">
+                          <img src="https://uxwing.com/wp-content/themes/uxwing/download/file-and-folder-type/page-file-icon.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                          {{ name }}
+                          <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+                        </a>
+                      </td>
+                      <td>{{ format }}</td>
+                      <td>{{ size }}</td>
+                      <td>{{ date }}</td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </form>
+</body>
+</html>
